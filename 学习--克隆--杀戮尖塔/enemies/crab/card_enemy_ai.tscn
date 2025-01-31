@@ -1,0 +1,52 @@
+[gd_scene load_steps=14 format=3 uid="uid://bf14xc832xid8"]
+
+[ext_resource type="Script" uid="uid://c52aanu04078j" path="res://Scenes/enemy/enemy_action_picker.gd" id="1_apitj"]
+[ext_resource type="Script" uid="uid://blqq8opkt7j2e" path="res://enemies/crab/card_attack_action.gd" id="2_4hp4l"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_qg2d3"]
+[ext_resource type="Script" uid="uid://pmgggae5y5k6" path="res://enemies/crab/card_block_action.gd" id="3_ra2gh"]
+[ext_resource type="Script" uid="uid://dv5coxm64wdui" path="res://custom_resources/intent.gd" id="4_l322v"]
+[ext_resource type="Script" uid="uid://j37v1ihw463c" path="res://enemies/crab/card_mega_block_action.gd" id="4_rhd6m"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_k277s"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="6_k277s"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="8_0ucye"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="8_8xprc"]
+
+[sub_resource type="Resource" id="Resource_8xprc"]
+script = ExtResource("4_l322v")
+number = "7"
+icon = ExtResource("3_qg2d3")
+metadata/_custom_type_script = ExtResource("4_l322v")
+
+[sub_resource type="Resource" id="Resource_erxur"]
+script = ExtResource("4_l322v")
+number = ""
+icon = ExtResource("6_k277s")
+metadata/_custom_type_script = ExtResource("4_l322v")
+
+[sub_resource type="Resource" id="Resource_8l72i"]
+script = ExtResource("4_l322v")
+number = ""
+icon = ExtResource("8_0ucye")
+metadata/_custom_type_script = ExtResource("4_l322v")
+
+[node name="CardEnemyAI" type="Node"]
+script = ExtResource("1_apitj")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_4hp4l")
+intent = SubResource("Resource_8xprc")
+type = 1
+chang_weight = 1.0
+sound = ExtResource("5_k277s")
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_ra2gh")
+intent = SubResource("Resource_erxur")
+type = 1
+chang_weight = 1.0
+sound = ExtResource("8_8xprc")
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_rhd6m")
+intent = SubResource("Resource_8l72i")
+sound = ExtResource("8_8xprc")

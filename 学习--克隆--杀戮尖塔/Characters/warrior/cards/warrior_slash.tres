@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dl0lgxgpumhdf"]
+
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_gop2g"]
+[ext_resource type="Script" uid="uid://deb7pjylp3oj6" path="res://custom_resources/card.gd" id="1_xlscl"]
+[ext_resource type="Script" uid="uid://ctwsksaca5v8k" path="res://Characters/warrior/cards/warrior_slash.gd" id="2_do06h"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/slash.ogg" id="3_xfl7p"]
+
+[resource]
+script = ExtResource("2_do06h")
+id = "warrior_slash"
+type = 0
+target = 2
+cost = 2
+icon = ExtResource("1_gop2g")
+tooltip_text = "对所有敌人造成[color=\"ff0000\"]4[/color]伤害"
+sound = ExtResource("3_xfl7p")
+metadata/_custom_type_script = ExtResource("1_xlscl")
