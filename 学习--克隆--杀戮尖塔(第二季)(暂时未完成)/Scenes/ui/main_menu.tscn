@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://2ugg4owaxpw6"]
+
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_0js1b"]
+[ext_resource type="Script" uid="uid://ciubigwnjvf2" path="res://Scenes/ui/main_menu.gd" id="1_iug37"]
+[ext_resource type="Texture2D" uid="uid://b1nj6u7dxl3mh" path="res://art/tile_0085.png" id="2_iug37"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="3_6gvf8"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="4_itnin"]
+[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://art/tile_0108.png" id="5_wvo6i"]
+[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://art/tile_0120.png" id="6_iiquc"]
+
+[sub_resource type="Gradient" id="Gradient_ll7s5"]
+colors = PackedColorArray(0.591579, 0.373389, 0.111849, 1, 0.0744457, 0.0744457, 0.0744457, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7b74l"]
+gradient = SubResource("Gradient_ll7s5")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajqjj"]
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.239216)
+shadow_offset = Vector2(4.79, 2.565)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iug37")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_7b74l")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "我的卡牌肉鸽"
+label_settings = SubResource("LabelSettings_ajqjj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -7.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+disabled = true
+text = "继续游戏"
+
+[node name="NewRun" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "新游戏"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "退出游戏"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19.9375, 96.0625)
+scale = Vector2(2.13281, 2.13281)
+texture = ExtResource("1_0js1b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(47.4375, 66.5625)
+scale = Vector2(2.57031, 2.57031)
+texture = ExtResource("2_iug37")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(53, 112)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("3_6gvf8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(204, 86)
+scale = Vector2(1.75391, 1.69141)
+texture = ExtResource("4_itnin")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(222.437, 109.563)
+scale = Vector2(2.57031, 2.57031)
+texture = ExtResource("5_wvo6i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(235, 69)
+scale = Vector2(1.3164, 1.3164)
+texture = ExtResource("6_iiquc")
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

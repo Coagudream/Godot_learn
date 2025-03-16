@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://gdq1vbxlp5oe"]
+
+[ext_resource type="Script" uid="uid://deb7pjylp3oj6" path="res://custom_resources/card.gd" id="1_04gd4"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="1_hyhuf"]
+[ext_resource type="Script" uid="uid://dpue76rljo0s0" path="res://Characters/warrior/cards/warrior_block.gd" id="3_ipkee"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/block.ogg" id="4_81gte"]
+
+[resource]
+script = ExtResource("3_ipkee")
+id = "warrior_block"
+type = 1
+target = 0
+cost = 1
+rarity = 0
+icon = ExtResource("1_hyhuf")
+tooltip_text = "对自己添加[color=\"0044ff\"]5[/color]点护盾"
+sound = ExtResource("4_81gte")
+metadata/_custom_type_script = ExtResource("1_04gd4")

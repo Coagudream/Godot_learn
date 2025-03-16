@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmd56m31ow3ha"]
+
+[ext_resource type="Script" uid="uid://c52aanu04078j" path="res://Scenes/enemy/enemy_action_picker.gd" id="1_hyg8h"]
+[ext_resource type="Script" uid="uid://chtekolr5c2vt" path="res://enemies/bat/bat_attack_action.gd" id="2_n13j3"]
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://art/tile_0106.png" id="3_mtrjb"]
+[ext_resource type="Script" uid="uid://dn3083l470rp6" path="res://enemies/bat/bat_block_action.gd" id="3_ppppn"]
+[ext_resource type="Script" uid="uid://dv5coxm64wdui" path="res://custom_resources/intent.gd" id="4_m2ryk"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="6_bo8ts"]
+
+[sub_resource type="Resource" id="Resource_odgp5"]
+script = ExtResource("4_m2ryk")
+number = "2x4"
+icon = ExtResource("3_mtrjb")
+metadata/_custom_type_script = ExtResource("4_m2ryk")
+
+[sub_resource type="Resource" id="Resource_fulf0"]
+script = ExtResource("4_m2ryk")
+number = ""
+icon = ExtResource("6_bo8ts")
+metadata/_custom_type_script = ExtResource("4_m2ryk")
+
+[node name="BatEnemyAI" type="Node"]
+script = ExtResource("1_hyg8h")
+
+[node name="BatAttackAction" type="Node" parent="."]
+script = ExtResource("2_n13j3")
+intent = SubResource("Resource_odgp5")
+type = 1
+chang_weight = 3.0
+
+[node name="BatBlockAction" type="Node" parent="."]
+script = ExtResource("3_ppppn")
+intent = SubResource("Resource_fulf0")
+type = 1
+chang_weight = 1.0

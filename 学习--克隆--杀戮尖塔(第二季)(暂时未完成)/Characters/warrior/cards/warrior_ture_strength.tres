@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://2sv575v5a0nu"]
+
+[ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://art/tile_0127.png" id="1_rob2n"]
+[ext_resource type="Script" uid="uid://deb7pjylp3oj6" path="res://custom_resources/card.gd" id="1_x6q4a"]
+[ext_resource type="AudioStream" uid="uid://cod2744u8v62k" path="res://art/true_strength.ogg" id="3_ueos2"]
+
+[resource]
+script = ExtResource("1_x6q4a")
+id = "warrior_ture_strength"
+type = 2
+target = 0
+cost = 3
+rarity = 2
+icon = ExtResource("1_rob2n")
+tooltip_text = "自己获得[color=\"ffdf00\"]2[/color]肌肉"
+sound = ExtResource("3_ueos2")
+metadata/_custom_type_script = ExtResource("1_x6q4a")

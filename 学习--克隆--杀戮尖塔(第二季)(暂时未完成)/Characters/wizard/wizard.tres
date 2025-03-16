@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://cel66ufghxeic"]
+
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_arf2v"]
+[ext_resource type="Script" uid="uid://bywrcsrvwinx6" path="res://custom_resources/character_stats.gd" id="1_gf8wi"]
+[ext_resource type="Resource" uid="uid://bew4vgppx8c7w" path="res://Characters/warrior/warrior_string_deck.tres" id="3_x12ru"]
+
+[resource]
+script = ExtResource("1_gf8wi")
+character_name = "法师"
+description = "多年的智慧，和背痛"
+portrait = ExtResource("1_arf2v")
+staring_deck = ExtResource("3_x12ru")
+cards_per_turn = 3
+max_mana = 4
+max_health = 27
+art = ExtResource("1_arf2v")
+metadata/_custom_type_script = ExtResource("1_gf8wi")

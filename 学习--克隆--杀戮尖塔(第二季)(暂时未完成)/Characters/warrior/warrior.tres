@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://df8yh6s80fmob"]
+
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="1_k6vrk"]
+[ext_resource type="Script" uid="uid://bywrcsrvwinx6" path="res://custom_resources/character_stats.gd" id="1_pdyrg"]
+[ext_resource type="Resource" uid="uid://bew4vgppx8c7w" path="res://Characters/warrior/warrior_string_deck.tres" id="3_pth84"]
+
+[resource]
+script = ExtResource("1_pdyrg")
+character_name = "战士"
+description = "喜欢切东西"
+portrait = ExtResource("1_k6vrk")
+staring_deck = ExtResource("3_pth84")
+cards_per_turn = 4
+max_mana = 3
+max_health = 35
+art = ExtResource("1_k6vrk")
+metadata/_custom_type_script = ExtResource("1_pdyrg")

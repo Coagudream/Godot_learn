@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://c2ffgaxxibs5k"]
+
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="1_l4jrd"]
+[ext_resource type="Script" uid="uid://bywrcsrvwinx6" path="res://custom_resources/character_stats.gd" id="1_r3uok"]
+[ext_resource type="Resource" uid="uid://bew4vgppx8c7w" path="res://Characters/warrior/warrior_string_deck.tres" id="3_xxxmp"]
+
+[resource]
+script = ExtResource("1_r3uok")
+character_name = "刺客"
+description = "刺客的描述"
+portrait = ExtResource("1_l4jrd")
+staring_deck = ExtResource("3_xxxmp")
+cards_per_turn = 5
+max_mana = 3
+max_health = 24
+art = ExtResource("1_l4jrd")
+metadata/_custom_type_script = ExtResource("1_r3uok")

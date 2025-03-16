@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq4mbt2va61pr"]
+
+[ext_resource type="Script" uid="uid://cgs6bfnm8p5mt" path="res://Scenes/rewards/rewards.gd" id="1_of80q"]
+[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="2_iogqm"]
+[ext_resource type="PackedScene" uid="uid://0hvbwvrvs3i0" path="res://Scenes/ui/reward_button.tscn" id="3_el2k1"]
+[ext_resource type="Texture2D" uid="uid://ctawij75ocix7" path="res://art/gold.png" id="4_2rnp8"]
+[ext_resource type="Texture2D" uid="uid://bt6bkml3j6j7" path="res://art/rarity.png" id="5_4x3ry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wudg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iogqm"]
+bg_color = Color(0, 0, 0, 0.478431)
+
+[node name="Rewards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_of80q")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iogqm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackgroundDimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.85098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -32.5
+offset_right = 35.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "选择奖励"
+label_settings = SubResource("LabelSettings_1wudg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iogqm")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/RewardContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Rewards" type="VBoxContainer" parent="VBoxContainer/RewardContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RewardButton" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_el2k1")]
+layout_mode = 2
+reward_icon = ExtResource("4_2rnp8")
+reward_text = "127 金币"
+
+[node name="CardButton" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_el2k1")]
+layout_mode = 2
+reward_icon = ExtResource("5_4x3ry")
+reward_text = "新卡牌"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 14
+text = "继续"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
